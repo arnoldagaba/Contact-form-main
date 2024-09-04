@@ -1,0 +1,40 @@
+@font-face {
+    font-family: 'Karla';
+    src: url('./assets/fonts/Karla-VariableFont_wght.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    /* State Colors */
+    --primary: hsl(148, 38%, 91%); /* Green 200 */
+    --secondary: hsl(169, 82%, 27%); /* Green 600 */
+    --error: hsl(0, 66%, 54%); /* Red */
+
+    /* Neutral Colors */
+    --light: hsl(0, 0%, 100%); /* White */
+    --medium: hsl(186, 15%, 59%); /* Grey 500 */
+    --dark: hsl(187, 24%, 22%); /* Grey 900 */
+}
+
+body {
+    font-family: 'Karla', system-ui;
+}
+
+
+
+
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+  }
+
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
