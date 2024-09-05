@@ -4,7 +4,7 @@ let email = document.getElementById('email');
 let message = document.getElementById('message');
 let consent = document.getElementById('consent');
 let request = document.getElementById('request');
-let enquiry = document.getElementById('inquiry');
+let enquiry = document.getElementById('enquiry');
 let submitBtn = document.querySelector('button');
 
 // Display error message below input
@@ -38,21 +38,20 @@ function validate(input) {
     else if (input.type === 'email') {
         let emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 
-        if (!emailPattern.test(input.value)) {
-            displayError(input, 'Please enter a valid email address.');
-            isValid = false;
-        } else if (input.value.trim() === '') {
+        if (input.value.trim() === '') {
             displayError(input, 'This field is required.');
+            isValid = false;
+        } else if (!emailPattern.test(input.value)) {
+            displayError(input, 'Please enter a valid email address.');
             isValid = false;
         }
     }
-    // Check if request and enquiry are selected
-    else if (input.id === 'request' && input.value === '') {
-        displayError(input, 'Please select a request type.');
-        isValid = false;
-    } else if (input.id === 'inquiry' && input.value === '') {
-        displayError(input, 'Please select a query type.');
-        isValid = false;
+    // Check if either request or enquiry radio button is selected
+    else if (input.id === 'request' || input.id === 'enquiry') {
+        if (!request.checked && !enquiry.checked) {
+            displayError(request, 'Please select a query type.');
+            isValid = false;
+        }
     }
     // Check if consent checkbox is checked
     else if (input.type === 'checkbox' && !input.checked) {
@@ -68,8 +67,8 @@ function showToast() {
     let toast = document.getElementById("toast");
 
     toast.innerHTML = `
-    <h2><img src="assets/images/icon-success-check.svg" width="10px" height="10px" />Message Sent!</h2>
-    <p>Your message has been sent successfully.</p>
+    <h2><img src="assets/images/icon-success-check.svg" width="20px" height="20px" />Message Sent!</h2>
+    <p>Thanks for completing the form. We'll be in touch soon!</p>
     `;
     toast.classList.add("show");
 
@@ -83,7 +82,7 @@ function showToast() {
 submitBtn.addEventListener('click', function (e) {
     e.preventDefault(); // Prevent form submission
 
-    let inputFields = [firstname, lastname, email, request, enquiry, consent]; // Correct field references
+    let inputFields = [firstname, lastname, email, consent];
     let isFormValid = true;
 
     // Clear any existing errors
@@ -95,8 +94,8 @@ submitBtn.addEventListener('click', function (e) {
     });
 
     // Validate each input field
-    inputFields.forEach(inputField => {
-        if (!validate(inputField)) {
+    inputFields.forEach(input => {
+        if (!validate(input)) {
             isFormValid = false;
         }
     });

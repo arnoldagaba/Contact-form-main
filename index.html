@@ -2,23 +2,21 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+  
   <!-- Google Font - Karla -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
-    rel="stylesheet">
+    rel="stylesheet" />
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="style.css">
-
+  <link rel="stylesheet" href="style.css" />
   <title>Frontend Mentor | Contact form</title>
-
 </head>
 
 <body>
@@ -29,20 +27,18 @@
       <div class="names">
         <div class="form-group name">
           <label for="firstname">First Name <span class="required">*</span></label>
-          <input type="text" name="firstname" id="firstname">
-          <!-- This field is required -->
+          <input type="text" name="firstname" id="firstname" aria-required="true" />
         </div>
 
         <div class="form-group name">
           <label for="lastname">Last Name <span class="required">*</span></label>
-          <input type="text" name="lastname" id="lastname">
-          <!-- This field is required -->
+          <input type="text" name="lastname" id="lastname" aria-required="true" />
         </div>
       </div>
 
       <div class="form-group">
         <label for="email">Email Address <span class="required">*</span></label>
-        <input type="email" name="email" id="email">
+        <input type="email" name="email" id="email" aria-required="true" />
       </div>
 
       <div class="form-group">
@@ -50,43 +46,44 @@
 
         <div class="radio-btns">
           <label for="request">
-            <input type="radio" name="choice" id="request">
-            General Enquiry
+            <input type="radio" name="choice" id="request" /> General Enquiry
           </label>
-
           <label for="enquiry">
-            <input type="radio" name="choice" id="enquiry">
-            Support Request
+            <input type="radio" name="choice" id="enquiry" /> Support Request
           </label>
         </div>
       </div>
 
       <div class="form-group">
         <label for="message">Message <span class="required">*</span></label>
-        <textarea name="message" id="message"></textarea>
+        <textarea name="message" id="message" aria-required="true"></textarea>
       </div>
 
       <div class="form-group form-consent">
         <label for="consent">
-          <input type="checkbox" name="consent" id="consent">
-          <span>I consent to being contacted by the team <span class="required">*</span></span>
+          <input type="checkbox" name="consent" id="consent" aria-required="true" />
+          <span>I consent to being contacted by the team
+            <span class="required">*</span></span>
         </label>
-        <!-- To submit this form, please consent to being contacted -->
       </div>
 
       <div class="form-group">
-        <button type="submit" onclick="showToast('Your custom message goes here!')">Submit</button>
+        <button type="submit" onclick="showToast('Your custom message goes here!')">
+          Submit
+        </button>
       </div>
 
-      <div class="toast" id="toast"></div>
+      <div class="toast" id="toast" aria-live="polite"></div>
     </form>
-
   </div>
 
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
+    Challenge by
+    <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+    Coded by <a href="#">ArnoldAgaba</a>.
   </div>
+
+  <script src="script.js"></script>
 </body>
 
 </html>
