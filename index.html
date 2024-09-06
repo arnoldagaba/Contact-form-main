@@ -4,10 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- displays site properly based on user's device -->
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
-  
+
   <!-- Google Font - Karla -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,7 +21,7 @@
   <div class="container">
     <h1>Contact Us</h1>
 
-    <form>
+    <form id="contact-form">
       <div class="names">
         <div class="form-group name">
           <label for="firstname">First Name <span class="required">*</span></label>
@@ -46,10 +44,10 @@
 
         <div class="radio-btns">
           <label for="request">
-            <input type="radio" name="choice" id="request" /> General Enquiry
+            <input type="radio" name="choice" id="request" /> Support Request
           </label>
           <label for="enquiry">
-            <input type="radio" name="choice" id="enquiry" /> Support Request
+            <input type="radio" name="choice" id="enquiry" /> General Enquiry
           </label>
         </div>
       </div>
@@ -68,9 +66,7 @@
       </div>
 
       <div class="form-group">
-        <button type="submit" onclick="showToast('Your custom message goes here!')">
-          Submit
-        </button>
+        <button type="submit" id="submitBtn">Submit</button>
       </div>
 
       <div class="toast" id="toast" aria-live="polite"></div>
